@@ -6,16 +6,17 @@
 
 body{
     background: #333;
+    height: 100vh;
 }
 
 div{
     position: absolute;
     top: 50%;
-    left:50%;
+    left:68%;
     transform: translate(-50%,-50%);
     background: linear-gradient(150deg, orange,yellow);
     font-size: 3em;
-    width: 50%;
+    width: 40%;
     padding: 2em 0;
     border-radius: .5em;
     box-shadow: 0px 0px 30px #111;
@@ -30,4 +31,9 @@ strong{
 
 .off{
     color: rgb(230, 3, 3);
+}
+
+img{
+    background: green;
+    height: 100%;
 }

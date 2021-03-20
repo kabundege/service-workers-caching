@@ -6,16 +6,16 @@ self.addEventListener('activate',e => { console.log("service worker is activated
 
 self.addEventListener('fetch',e =>{
     e.respondWith(
-        fetch(e.request)
-        .then(res => {
-            const resClone = res.clone();
-
-            caches.open(cachName).then(cache => {
-                cache.put(e.request,resClone);
+            fetch(e.request)
+            .then(res => {
+                const resClone = res.clone();
+    
+                caches.open(cachName).then(cache => {
+                    cache.put(e.request,resClone);
+                })
+    
+                return res;
             })
-
-            return res;
-        })
-        .catch(err=> caches.match(e.request).then(res => res))
-    )
+            .catch(err=> caches.match(e.request).then(res => res))
+        )
 })
